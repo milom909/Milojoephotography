@@ -1,0 +1,338 @@
+/* === GENERAL PAGE STYLES === */
+body {
+   padding: 0;
+  margin: 0;
+  height: 100%; /* demo scroll space */
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0d273f, #2e133a);
+  overflow-x: hidden; /* prevent horizontal scrolling */
+}
+
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  min-height: 100%;
+  will-change: transform;
+}
+
+
+
+
+/* === MARQUEE === */
+.marquee-container {
+  padding-top: 4vw;
+  position: absolute;
+  top: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.marquee {
+  display: inline-block;
+  animation: scroll 15s linear infinite;
+}
+
+.marquee span {
+  margin-right: 3rem;
+  font-size: 8vw;
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* === BUTTON: #Search === */
+
+#Search:hover {
+  background: rgb(0, 255, 234)
+ 
+}
+
+@keyframes floaty {
+  0% { transform: translate(-50%, -50%) rotate(-2deg); }
+  25% { transform: translate(-50%, -50%) rotate(2deg); }
+  50% { transform: translate(-50%, -50%) rotate(-2deg); }
+  75% { transform: translate(-50%, -50%) rotate(2deg); }
+  100% { transform: translate(-50%, -50%) rotate(-2deg); }
+}
+
+/* === OTHER TEXT ELEMENTS === */
+#tt1 {
+  position: absolute;
+
+ 
+  z-index: 8;
+}
+
+
+/* === OTHER ELEMENTS PLACEHOLDER === */
+#LFYP {
+  position: absolute;
+
+  z-index: 5;
+  color: white;
+  font-size: 3vw;
+  font-weight: bold;
+  width: 30vw;
+  text-align: center;
+
+  top: -4vw;
+  right: -15vw;
+}
+
+#Search {
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  padding: 2vw 2vw;
+  font-size: 3vw;
+  background: rgb(0, 183, 255);
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  mix-blend-mode: exclusion;
+  animation: floaty 6s ease-in-out infinite;
+ z-index: 1100;
+  transition: background 0.4s ease;
+  text-align: center;
+  white-space: nowrap;
+  left: 0vw;
+  top: 8vw;
+}
+
+#Book {
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  padding: 2vw 2vw;
+  font-size: 3vw;
+  background: rgb(183, 0, 255);
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  mix-blend-mode: exclusion;
+  animation: floaty 6s ease-in-out infinite;
+ z-index: 1100;
+  transition: background 0.4s ease;
+  text-align: center;
+  white-space: nowrap;
+  left: 0vw;
+  top: 8vw;
+}
+
+#Book:hover {
+  background: rgb(255, 123, 0)
+ 
+}
+
+
+
+
+#photo-container #cm {
+  position: absolute;
+  top: 1ch;       /* relative to container */
+  left: 0.5vw;
+  transform: translateX(-50%);
+  font-size: 5vw; /* scales with viewport */
+  color: #ffffff;
+  mix-blend-mode: exclusion;
+  z-index: 9;
+  text-align: center;
+}
+
+#cm:hover {
+  font-size: 10vw;
+}
+/* === PHOTO + CLICK ME WRAPPER === */
+
+
+#photo-container {
+  position: absolute;
+  top: 15vw;
+  left: 20%;      
+  transform: translate(-50%, -50%);
+  width: 30vw;    
+  z-index: 5;
+ transition: 1s ease width;
+}
+
+#photo-container:hover{
+  width: 33vw;
+}
+
+#photo-container .floating {
+  width: 100%;    /* image fills container */
+  height: auto;
+  border-radius: 2vw;
+  animation: float 4s ease-in-out infinite;
+  cursor: pointer;
+}
+
+#info-container {
+  position: absolute;
+  top: 30vw;
+  left: 70%;
+  
+}
+
+#info-container3 {
+  position: absolute;
+  top: 125vw;
+  left: 70%;
+  
+}
+
+
+
+#hover-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: -2;
+}
+
+#Search:hover ~ #hover-overlay,
+#Search:focus ~ #hover-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* #firstrow {
+  position: absolute;
+  top: 0vh;
+  left: 0vh;
+} */
+
+/* Top bar */
+.top-bar {
+  position: fixed;        /* stays on top */
+  top: 0; left: 0;
+  width: 100%;
+  height: 5vw;
+  background: linear-gradient(135deg, #0d273f, #2e133a); /* matches your page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 100;           /* above everything else */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+
+/* Logo */
+.top-bar .logo {
+  color: white;
+  font-size: 3vw;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+    text-decoration: none;
+    transition: 0.3s ease font-size, color 0.3s ease;
+}
+
+ .logo:hover {
+      font-size: 3.5vw;
+      color: #2782d6;
+    }
+
+/* Navigation links */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 2vw;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.top-bar .nav-links a:hover {
+   font-size: 3.5vw;
+      color: #2782d6;
+}
+
+
+#fly-photo {
+  position: absolute;  /* so we can animate it precisely */
+  top: 82vw;           /* vertical center */
+  left: 80vw;          /* horizontal center */
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+
+  z-index: 6;
+}
+
+#fly-photo2 {
+  position: absolute;  /* so we can animate it precisely */
+  top: 127vw;           /* vertical center */
+  left: 20%;          /* horizontal center */
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+
+  z-index: 6;
+}
+
+
+#info-container2 {
+  position: absolute;
+  top: 80vw;
+  right: 70%;
+  
+}
+
+
+#Apply {
+  position: absolute;
+  width: 30vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  padding: 2vw 2vw;
+  font-size: 3vw;
+  background: rgb(255, 196, 0);
+  border: none;
+  border-radius: 1vw;
+  cursor: pointer;
+  mix-blend-mode: exclusion;
+  animation: floaty 6s ease-in-out infinite;
+ z-index: 1100;
+  transition: background 0.4s ease;
+  text-align: center;
+  white-space: nowrap;
+  left: 0vw;
+  top: 8vw;
+}
+
+#Apply:hover {
+  background: rgb(60, 255, 0)
+ 
+}

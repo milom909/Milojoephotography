@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milo Joe Photography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top-bar">
+        <a href="index.html"class="logo">MyPhotoSite</a>
+        <nav class="nav-links">
+  
+          <a href="Search.html">Search</a>
+          <a href="Book.html">Book</a>
+          <a href="Apply.html">Apply</a>
+        </nav>
+      </header>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      
+
+      <div class="marquee-container">
+        <div class="marquee">
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+        </div>
+        <div class="marquee">
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+          <span>Find your perfect shot</span>
+        </div>
+      </div>
+
+      <div id="firstrow">
+        <div id="photo-container">
+          <img id="tt1" src="Photos/IMG_1524.jpg" class="floating">
+          <div class="floating" id="cm">Click Me</div>
+        </div>
+
+        <div id="info-container">
+          <div class="infotext" id="LFYP">Looking for your Photos?</div>
+          <button id="Search" onclick="window.location.href='Search.html'">Find My Photo</button>
+        </div>
+      </div>
+
+      <div id="info-container2">
+          <div class="infotext" id="LFYP">Need to Book a Shoot?</div>
+          <button id="Book" onclick="window.location.href='Book.html'">Book a Shoot</button>
+        </div>
+
+<div id="info-container3">
+          <div class="infotext" id="LFYP">Are you a Photographer looking for a Job?</div>
+          <button id="Apply" onclick="window.location.href='Apply.html'">Apply Now</button>
+        </div>
+
+        <img src="Photos/_DSC2198.jpg" id="fly-photo2">
+
+
+      <div style="height:300vh;"></div> <!-- ✅ spacer is now inside smooth-content -->
+
+     
+      <img src="Photos/_DSC3635.jpg" id="fly-photo" alt="Flying Photo">
+
+    </div>
+  </div>
+ <div id="hover-overlay"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
