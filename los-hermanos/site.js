@@ -112,7 +112,7 @@
       err.textContent = '';
       var notes = form.elements.notes.value.trim();
       var msg = [
-        'Hi Los Hermanos, I\'d like a free sandbag quote.',
+        'Hi Hold the Line, I\'d like a free sandbag quote.',
         name ? 'Name: ' + name : null,
         'Street: ' + street + ', Larkspur',
         'Cover: ' + picks.join(', '),
