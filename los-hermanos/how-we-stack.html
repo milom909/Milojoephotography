@@ -48,19 +48,25 @@
         <li><div><strong>Stagger every row</strong><span>Each bag sits over the seam below, like bricks, so water can't find a straight path through.</span></div></li>
         <li><div><strong>Fold the plastic over</strong><span>The sheeting wraps the front of the wall, which keeps water from soaking through the bags.</span></div></li>
       </ol>
-      <figure class="diagram" aria-label="Diagram: three staggered rows of sandbags on plastic sheeting in front of a door">
-        <div class="wall" id="wall">
+      <figure class="diagram" aria-label="Diagram: water on the left, three staggered rows of sandbags on plastic sheeting, garage door on the right">
+        <div class="scene">
+          <span class="tag tag-water">Water</span>
+          <span class="tag tag-wall">Sandbags</span>
+          <span class="tag tag-door">Garage</span>
+          <div class="water" aria-hidden="true"></div>
+          <div class="wall" id="wall">
+            <div class="row"><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div></div>
+            <div class="row"><div class="sb half"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb half"></div></div>
+            <div class="row"><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div></div>
+          </div>
           <div class="door" aria-hidden="true"></div>
-          <div class="row"><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div></div>
-          <div class="row"><div class="sb half"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb half"></div></div>
-          <div class="row"><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div><div class="sb"></div></div>
-          <div class="sheet"></div>
-          <div class="ground"></div>
+          <div class="sheet" aria-hidden="true"></div>
+          <div class="ground" aria-hidden="true"></div>
         </div>
-        <div class="diagram-foot">
-          <span class="flow">← water side</span>
-          <span>Staggered joints · plastic underlay</span>
-          <span>door →</span>
+        <div class="key">
+          <span><i class="k-sheet"></i>Plastic sheeting</span>
+          <span><i class="k-ground"></i>Ground</span>
+          <span>Rows staggered like bricks</span>
         </div>
         <div class="ctas" style="margin-top:16px"><button class="btn btn-ink" type="button" id="replay">Stack it again</button></div>
       </figure>
