@@ -112,7 +112,7 @@
       err.textContent = '';
       var notes = form.elements.notes.value.trim();
       var msg = [
-        'Hi Hold the Line, I\'d like a free sandbag quote.',
+        'Hi Hold the Line, I\'d like a free sandbag quote with the El Niño Community Discount (15% off).',
         name ? 'Name: ' + name : null,
         'Street: ' + street + ', Larkspur',
         'Cover: ' + picks.join(', '),
