@@ -36,13 +36,13 @@
     });
   });
 
-  // stacking diagram: drop the bags in, bottom row first
+  // stacking diagram: lay the plastic, then drop the bags in, bottom row first
   var wall = document.getElementById('wall');
   if (wall) {
     var n = 0;
     var rows = wall.querySelectorAll('.row');
     for (var r = rows.length - 1; r >= 0; r--) {
-      rows[r].querySelectorAll('.sb').forEach(function (b) { b.style.animationDelay = (n++ * 0.06) + 's'; });
+      rows[r].querySelectorAll('.sb').forEach(function (b) { b.style.animationDelay = (0.65 + n++ * 0.06) + 's'; });
     }
     var replay = document.getElementById('replay');
     var play = function () { wall.classList.remove('go'); void wall.offsetWidth; wall.classList.add('go'); };
