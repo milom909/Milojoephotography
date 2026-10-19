@@ -133,3 +133,50 @@
     });
   }
 })();
+
+// original "Hold the Line" jingle, made with Web Audio (no music file)
+(function () {
+  var brand = document.getElementById('brand');
+  var btn = document.getElementById('tuneBtn');
+  if (!brand) return;
+  var AC = window.AudioContext || window.webkitAudioContext;
+  var ctx = null, busyUntil = 0, clicked = false;
+  document.addEventListener('pointerdown', function () { clicked = true; }, { once: true, capture: true });
+
+  function note(freq, start, len, vol) {
+    var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'triangle';
+    o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, start);
+    g.gain.exponentialRampToValueAtTime(vol, start + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, start + len);
+    o.connect(g); g.connect(ctx.destination);
+    o.start(start); o.stop(start + len + 0.05);
+  }
+  function chord(freqs, start, len) { freqs.forEach(function (f) { note(f, start, len, 0.07); }); }
+
+  function play() {
+    if (!AC) return;
+    var now0 = Date.now();
+    if (now0 < busyUntil) return;
+    if (!ctx) ctx = new AC();
+    if (ctx.state === 'suspended') ctx.resume();
+    var t = ctx.currentTime + 0.05, b = 0.16;
+    // driving stabs, then a lift and a held chord
+    chord([196.0, 246.9, 293.7], t, 0.12);
+    chord([196.0, 246.9, 293.7], t + b, 0.12);
+    chord([196.0, 246.9, 293.7], t + b * 2, 0.12);
+    chord([220.0, 261.6, 329.6], t + b * 3, 0.18);
+    note(392.0, t + b * 4.5, 0.14, 0.1);
+    note(440.0, t + b * 5.5, 0.14, 0.1);
+    note(523.3, t + b * 6.5, 0.14, 0.1);
+    chord([261.6, 329.6, 392.0, 523.3], t + b * 7.5, 0.9);
+    busyUntil = now0 + 2200;
+    brand.classList.add('playing');
+    setTimeout(function () { brand.classList.remove('playing'); }, 2200);
+  }
+
+  // hover plays only after the visitor has clicked somewhere (browser rule)
+  brand.addEventListener('mouseenter', function () { if (clicked) play(); });
+  if (btn) btn.addEventListener('click', play);
+})();
