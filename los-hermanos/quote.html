@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Quote · Hold the Line Sandbagging</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sandbag placement and flood protection for homes in Larkspur, CA. Free quotes. Call or text 415-895-8570.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Hold the Line <span>Sandbagging</span></a>
+    <div class="bar-right">
+      <a class="bar-call" href="tel:+14158958570">415-895-8570</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    </div>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="el-nino.html">El Niño</a>
+      <a href="how-we-stack.html">How we stack</a>
+      <a href="our-work.html">Our work</a>
+      <a href="quote.html" aria-current="page">Free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="quote-band">
+    <div class="wrap quote-grid">
+      <div>
+        <div class="head">
+          <p class="label">Free quote</p>
+          <h1 style="font-size:clamp(2.6rem,7vw,4.4rem);font-weight:900;text-transform:uppercase">Tell us what needs covering</h1>
+          <p class="lede">Fill this out and we'll write up a text for you to send us. Or skip the form and just call or text.</p>
+          <p class="deal-chip"><strong>15% off</strong> El Niño Community Discount is applied to every quote this season.</p>
+        </div>
+        <div class="contact-card">
+          <p class="label">Call or text</p>
+          <p class="number" data-phone-text>415-895-8570</p>
+          <div class="ctas">
+            <a class="btn btn-sand" href="tel:+14158958570">Call</a>
+            <a class="btn btn-ghost" href="sms:+14158958570">Text</a>
+            <button class="btn btn-ghost" type="button" data-copy="415-895-8570">Copy number</button>
+          </div>
+          <p class="small">Photos help us quote faster. Attach them to your text. We serve Larkspur, and nearby if you ask.</p>
+        </div>
+      </div>
+
+      <form id="qform" novalidate>
+        <div class="two">
+          <div class="field"><label for="q-name">Your name</label><input id="q-name" name="name" autocomplete="name" placeholder="Maria Lopez"></div>
+          <div class="field"><label for="q-street">Street in Larkspur</label><input id="q-street" name="street" autocomplete="address-line1" placeholder="Magnolia Ave"></div>
+        </div>
+        <div class="field">
+          <label id="q-what-l">What needs protecting?</label>
+          <div class="checks" role="group" aria-labelledby="q-what-l">
+            <label><input type="checkbox" id="q-garage" value="Garage door"> Garage door</label>
+            <label><input type="checkbox" id="q-door" value="Front or back door"> Doorway</label>
+            <label><input type="checkbox" id="q-gate" value="Side gate"> Side gate</label>
+            <label><input type="checkbox" id="q-fence" value="Fence line"> Fence line</label>
+            <label><input type="checkbox" id="q-deck" value="Deck / yard"> Deck / yard</label>
+            <label><input type="checkbox" id="q-pickup" value="Pickup of existing bags"> Pick up old bags</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="q-when">When do you need it?</label>
+          <select id="q-when" name="when">
+            <option>Before the next storm</option>
+            <option>This week</option>
+            <option>Just getting a price for later</option>
+          </select>
+        </div>
+        <div class="field"><label for="q-notes">Anything else? (optional)</label><textarea id="q-notes" name="notes" placeholder="Water came under the garage last winter, about 20 ft wide."></textarea></div>
+        <p class="err" id="q-err" role="alert"></p>
+        <div class="ctas" style="margin:0">
+          <button class="btn btn-sand" type="submit">Write my quote request</button>
+          <button class="btn btn-ghost" type="button" id="q-reset">Start over</button>
+        </div>
+        <div class="out" id="q-out" hidden>
+          <p class="label">Your message</p>
+          <pre id="q-msg"></pre>
+          <div class="ctas">
+            <a class="btn btn-sand" id="q-sms" href="sms:+14158958570">Open in Messages</a>
+            <button class="btn btn-ghost" type="button" data-copy-from="q-msg">Copy message</button>
+          </div>
+          <p class="small">If Messages doesn't open, copy the message and text it to 415-895-8570.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Hold the Line Sandbagging · Larkspur, CA · Call or text 415-895-8570</span>
+    <nav class="foot-links" aria-label="Footer"><a href="index.html">Home</a> <a href="services.html">Services</a> <a href="el-nino.html">El Niño</a> <a href="how-we-stack.html">How we stack</a> <a href="our-work.html">Our work</a> <a href="quote.html">Free quote</a></nav>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
